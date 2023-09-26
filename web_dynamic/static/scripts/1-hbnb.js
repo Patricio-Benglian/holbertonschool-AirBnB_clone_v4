@@ -1,6 +1,3 @@
-
-let checkedAmenity = {};
-
 $(document).ready(() => {
   $('.cb').click(function() {
     const amenList = []
@@ -9,6 +6,6 @@ $(document).ready(() => {
           amenList.push($(this).attr('data-name'));
       }
     });
-    $('.amenities').find("h4").text(amenList);
+    $('.amenities').find("h4").text(amenList.join(', '));
   });
 });
