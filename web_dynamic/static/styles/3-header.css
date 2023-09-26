@@ -11,7 +11,7 @@ header .logo {
     height: 100%;
 }
 
-header #avaiable {
+header #api_status.available {
     background-color: #ff545f;
 }
 

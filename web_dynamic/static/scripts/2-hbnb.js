@@ -8,16 +8,18 @@ $('.cb').click(function() {
   $('.amenities').find("h4").text(amenList.join(', '));
 });
 
-
-const request = require('request');
-
-request('http://0.0.0.0:5001/api/v1/status/', (err, response) => {
-  if (response === 'OK') {
-    $('div#api_status').removeClass('available');
-  } else {
+$.ajax({
+  url: 'http://0.0.0.0:5001/api/v1/status/',
+  type: 'GET',
+  success: function(response) {
     $('div#api_status').addClass('available');
-  }
-  if (err) {
-    console.log(err);
+    console.log('La solicitud se realizó correctamente');
+    console.log('Estado de la respuesta:', response.status);
+  },
+  error: function(xhr, status, error) {
+    $('div#api_status').removeClass('available');
+    console.log('Ocurrió un error en la solicitud');
+    console.log('Estado de la respuesta:', xhr.status);
+    console.log('Mensaje de error:', error);
   }
 });
