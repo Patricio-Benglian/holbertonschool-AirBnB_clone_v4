@@ -164,6 +164,7 @@ Pablo Riveiro - [Github](https://github.com/pablo-riveiro-uy)
 Patricio Benglian - [Github](https://github.com/Patricio-Benglian)
 
 Second part of Airbnb: Joann Vuong
+
 Web dynamic part of AirBnB: Pablo Riveiro & Patricio Benglian
 ## License
 Public Domain. No copy write protection. 
