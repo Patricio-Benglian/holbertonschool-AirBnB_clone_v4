@@ -9,7 +9,7 @@ $('.cb').click(function() {
 });
 
 $.ajax({
-  url: 'http://0.0.0.0:5001/api/v1/status/',
+  url: 'http://localhost:5001/api/v1/status/',
   type: 'GET',
   success: function(response) {
     $('div#api_status').addClass('available');
