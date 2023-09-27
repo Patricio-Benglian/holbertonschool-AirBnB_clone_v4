@@ -26,14 +26,24 @@ $.ajax({
 function allPlacesPost() {
     $.ajax({
         type: "POST",
-        url: 'http://0.0.0.0:5001/api/v1/places_search/',
+        // cambie 0.0.0.0 a localhost - patri
+        url: 'http://localhost:5001/api/v1/places_search/',
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({}),
         success: function (data) {
-            console.log("llamda exitosa");
-            $('section.places').add("article").text("info de places");
+            console.log("llamada exitosa");
+            for (let place of data) {
+                console.log(place);
+                // $('section.places').add("article").text(`${JSON.stringify(place)}`);
+                $('section.places').add('article').text(`${place.name}`);
+            }
         }
     })
 }
 
 allPlacesPost();
+// let output = ""
+// for (value in place) {
+//     console.log(place[value]);
+//     output.concat(place[value]);
+// }
