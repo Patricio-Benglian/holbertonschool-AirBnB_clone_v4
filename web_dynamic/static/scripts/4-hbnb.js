@@ -62,6 +62,7 @@ function articlePlace(place) {
 
 $('button').click(function () {
 	console.log('boton search clickeado')
+	$('.places').empty();
 	const amenIDList = []
 	$(".cb").each(function () {
 		if ($(this).is(":checked")) {
@@ -71,6 +72,7 @@ $('button').click(function () {
 	console.log(`amenities IDs selected : ${amenIDList}`);
 	let dictAmenities = {}
 	dictAmenities['amenities'] = amenIDList;
+	
 	$.ajax({
 		type: "POST",
 		url: 'http://localhost:5001/api/v1/places_search/',
