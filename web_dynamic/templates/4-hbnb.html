@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ cache_id }}">
 	<link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
 	<link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
-	<script src="static/scripts/3-hbnb.js" defer></script>
+	<script src="static/scripts/4-hbnb.js" defer></script>
 	<title>HBnB</title>
 </head>
 
@@ -41,15 +41,15 @@
 			</div>
 			<div class="amenities">
 				<h3>Amenities</h3>
-				<h4> &nbsp; <{{ amenList }} </h4>
-						<div class="popover">
-							<ul>
-								{% for amenity in amenities %}
-								<li> <input class="cb" type="checkbox" data-id="{{ amenity.id }}"
-										data-name="{{ amenity.name }}"> {{ amenity.name }} </li>
-								{% endfor %}
-							</ul>
-						</div>
+				<h4> &nbsp; {{ amenList }} </h4>
+				<div class="popover">
+					<ul>
+						{% for amenity in amenities %}
+						<li> <input class="cb" type="checkbox" data-id="{{ amenity.id }}"
+								data-name="{{ amenity.name }}"> {{ amenity.name }} </li>
+						{% endfor %}
+					</ul>
+				</div>
 			</div>
 			<button type="button">Search</button>
 		</section>
